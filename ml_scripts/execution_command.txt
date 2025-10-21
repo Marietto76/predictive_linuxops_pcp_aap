@@ -1,0 +1,20 @@
+python3 ml_trend.py   --csv /tmp/ds389_cn_opscompleted_all_pmrep_final.csv   --metric ds389.cn.opscompleted   --interval 1min   --horizon_hours 24   --threshold 20000   --out_forecast /tmp/forecast_opscompleted.csv
+
+python3 ml_trend.py \
+  --csv /tmp/ds389_cn_opscompleted_all_pmrep_final.csv \
+  --metric ds389.cn.opscompleted \
+  --interval 1min \
+  --horizon_hours 24 \  ---> how far into the future your model will generate predictions.
+  --threshold 20000 \   ---> 
+  --out_forecast /tmp/forecast_opscompleted.csv
+
+
+
+Trend slope (per hour): 223.325098
+Intercept: 1655.221643
+Saved forecast CSV → /tmp/forecast_opscompleted.csv
+ETA to 20000.0: 2025-10-10 19:51:37.778845711
+
+
+
+

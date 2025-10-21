@@ -1,0 +1,38 @@
+chmod +x bash_v2.sh
+
+chmod +x read_pmfiles_concat_in_one_csv.sh
+./read_pmfiles_concat_in_one_csv.sh
+
+DIR=/var/log/pcp/pmlogger/$(hostname)
+METRIC=ds389.cn.opscompleted   --------------------> you can choose the metric and specify here
+OUT=/tmp/${METRIC//./_}_all_pmrep_final.csv
+INTERVAL=1min
+TZ_REGION="America/Guayaquil"   # o "UTC" si prefieres
+#TZ_REGION="UTC"
+# Rango: TODO el 7, 8 y 9 de octubre (incluye el 9 completo)
+START="2025-10-07 00:00:00"
+FINISH="2025-10-10 00:00:00"    # fin exclusivo (el día 10 a las 00:00)
+
+
+
+cat /tmp/ds389_cn_opscompleted_all_pmrep_final.csv
+
+
+[root@aappsql1 machine_learning]# cat /tmp/ds389_cn_opscompleted_all_pmrep_final.csv  | head -n 20
+Time,ds389.cn.opscompleted
+2025-10-07 09:43:29,123
+2025-10-07 09:44:29,138
+2025-10-07 09:45:29,237
+2025-10-07 09:46:29,270
+2025-10-07 09:47:29,471
+2025-10-07 09:48:29,526
+2025-10-07 09:49:29,541
+2025-10-07 09:50:29,680
+2025-10-07 09:51:29,765
+2025-10-07 09:52:29,834
+2025-10-07 09:53:29,849
+2025-10-07 09:54:29,988
+2025-10-07 09:55:29,1003
+2025-10-07 09:56:29,1018
+2025-10-07 09:57:29,1033
+
