@@ -1,0 +1,14 @@
+
+###GENERATE BASE CSV IMAGE
+python3 /tmp/plot_base_pcp_metric.py --csv /tmp/ds389_cn_opscompleted_all_pmrep_final.csv --out-dir /root/plots/
+PNG saved: /root/plots/ds389_cn_opscompleted_all_pmrep_final.ds389.cn.opscompleted.png
+
+
+###GENERATE IMAGE CSV OBSERVED VS FORECAST
+python3 plot_split_by_observed_predicted.py \
+  --csv forecast_opscompleted.csv \
+  --time-col Time --value-col value \
+  --label-col type --predicted-label predicted \
+  --out ./plots/ops_obs_pred.png \
+  --pdf ./plots/ops_obs_pred.pdf \
+  --resample 1min --rolling 5

@@ -1,0 +1,45 @@
+
+1. verificar métricas disponibles que se pueden recoger en el servidor
+
+# pminfo -h localhost | grep filesys
+hinv.nfilesys
+filesys.capacity
+filesys.used
+filesys.free
+filesys.maxfiles
+filesys.usedfiles
+filesys.freefiles
+filesys.mountdir
+filesys.full
+filesys.blocksize
+filesys.avail
+filesys.readonly
+filesys.uuid
+filesys.type
+
+
+# pminfo -h localhost | grep ds389.cn.current
+ds389.cn.currentconnectionsatmaxthreads
+ds389.cn.currentconnections
+
+#pminfo -h localhost | grep ds389.cn.ops
+ds389.cn.opsinitiated
+ds389.cn.opscompleted
+
+
+
+
+
+
+2. agregar la métrica para que sea escrita en el archivo pmlogger y colocar en que periodo de tiempo debe ser leida, cada 30 sec, cada 1 min, cada 30min, etc.
+
+vi /var/lib/pcp/config/pmlogger/config.default
+
+log mandatory on 30 second {
+    ds389
+}
+
+
+3. reiniciar pmlogger
+systemctl restart pmlogger
+
